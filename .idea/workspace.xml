@@ -5,27 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00237f1e-997e-417f-80da-7d44a487cd9a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/FeedOrdersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/FeedOrdersPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/ForgotPasswordPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/ForgotPasswordPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/HeaderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/HeaderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/ProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/RegistrationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HeaderWithLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HeaderWithLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HeaderWithoutLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HeaderWithoutLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LogoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogoutTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProfileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/0b226d96-9081-4c72-9f34-c1e5110adfbe-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/102ebff7-e4fe-4a9c-8d90-4432b13d650f-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/17843523-62e6-4b02-b325-1cf2dad16f95-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/356422bd-1723-45a9-870d-dcf2bb5d4c78-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/3b12204f-164b-4dd5-8669-7743cb2eb091-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/4057b2c0-6d5b-4d69-9976-93aae509a657-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/431853aa-e79f-4b9b-8f64-d6f576daf5ce-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/5430cc2b-942c-4941-a4ae-21092540e5b5-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/545661ed-44b2-4bfd-9358-37459ed289bd-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/554518db-725f-4f01-b11b-f9ae2f21a73d-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/592c8dee-66cc-453d-9be9-f39c3806e0e5-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/648db6bf-defe-446c-8e96-812ad30f34cb-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/65d8658b-44e6-4408-ba05-8672559ce84b-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/737a5cd6-42ee-4001-aa88-28bbaa3f1f0b-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/940cdfce-6e41-42b9-afe4-3193a53ae7a7-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/aaee929f-9890-4df7-a8dc-e19aa607d75c-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/allure.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/allure-results/allure.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/b8ffda08-3eb8-40eb-b500-8e127689293d-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/b9e27bcd-ff42-4107-b525-c1e0ef644abb-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/bf0d39ea-22b9-46d6-9812-da84b26dbf83-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/c62b4e6b-f469-4bf2-afe0-e12fe3fdfc76-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/cf667992-c28a-4aa3-be41-f27a53c69141-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/defc66c0-d683-4eeb-bfd8-ff24b2d1ddca-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/f1e127a1-dfbb-43f5-b8a4-c1df9944aad8-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/ff620dc1-4327-46df-9e59-cfb5156360ec-result.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +60,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="develop3" />
-                    <option name="lastUsedInstant" value="1682951511" />
+                    <option name="branchName" value="development_3" />
+                    <option name="lastUsedInstant" value="1683440576" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1682951189" />
+                    <option name="lastUsedInstant" value="1683440485" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop3" />
+                    <option name="lastUsedInstant" value="1682951511" />
                   </RecentBranch>
                 </list>
               </option>
@@ -100,7 +112,16 @@
       <recent name="helpers.rest_api_steps" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConstructorTest.checkClickTabFillingTest">
+  <component name="RunManager" selected="JUnit.ConstructorTest">
+    <configuration name="ConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConstructorTest.checkClickTabFillingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <option name="PACKAGE_NAME" value="" />
@@ -120,24 +141,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogoutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LogoutTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProfileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProfileTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RegistrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <option name="PACKAGE_NAME" value="" />
@@ -147,13 +150,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegistrationTest.newUserIsNotRegisteredWithoutPasswordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RegistrationTest" />
+      <option name="METHOD_NAME" value="newUserIsNotRegisteredWithoutPasswordTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConstructorTest.checkClickTabFillingTest" />
+        <item itemvalue="JUnit.ConstructorTest" />
         <item itemvalue="JUnit.RegistrationTest" />
-        <item itemvalue="JUnit.ProfileTest" />
-        <item itemvalue="JUnit.LogoutTest" />
+        <item itemvalue="JUnit.RegistrationTest.newUserIsNotRegisteredWithoutPasswordTest" />
         <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.ConstructorTest.checkClickTabFillingTest" />
       </list>
     </recent_temporary>
   </component>

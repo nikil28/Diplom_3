@@ -65,7 +65,6 @@ public class RegistrationTest extends BaseTest {
                 .fillPasswordInput(userNotValid.getPassword())
                 .clickRegistrationButton();
         userListForDelete.add(userNotValid);
-        sleep(1000);
         String currentURL = webdriver().driver().url();
         assertEquals(RegistrationPage.URL, currentURL);
     }
@@ -81,7 +80,6 @@ public class RegistrationTest extends BaseTest {
                 .fillPasswordInput(userNotValid.getEmail())
                 .clickRegistrationButton();
         userListForDelete.add(userNotValid);
-        sleep(1000);
         String currentURL = webdriver().driver().url();
         assertEquals(RegistrationPage.URL, currentURL);
     }
@@ -97,7 +95,6 @@ public class RegistrationTest extends BaseTest {
                 .fillPasswordInput("")
                 .clickRegistrationButton();
         userListForDelete.add(userNotValid);
-        sleep(1000);
         String currentURL = webdriver().driver().url();
         assertEquals(RegistrationPage.URL, currentURL);
     }
