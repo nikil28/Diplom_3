@@ -3,9 +3,6 @@
 ,src/main/java/pageobject/FeedOrdersPage.java,8\4\84fe228d4f8d71d2cf9f89489dc667fe6aec6c14
 `
 0src/main/java/pageobject/ForgotPasswordPage.java,1\f\1fd45074842df1b8a305db1bfa339c5b4082c421
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 Y
 )src/main/java/pageobject/ProfilePage.java,1\e\1e0f7686232a9e377b223e0adaba930bc006522a
 ^
