@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pageobject.*;
-
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.Assert.assertEquals;
 @DisplayName("Вход в личный кабинет")

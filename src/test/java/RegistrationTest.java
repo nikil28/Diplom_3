@@ -112,6 +112,11 @@ public class RegistrationTest extends BaseTest {
                         .clickRegistrationButton()
                         .isIncorrectPasswordErrorMessageDisplayed();
         userListForDelete.add(userNotValid);
+        for (User user : userListForDelete) {
+            if (user != null) {
+                user.deleteUserUsingAPI();
+            }
+        }
         assertTrue("Не отобразилось сообщение об ошибке", isIncorrectPasswordErrorMessageDisplayed);
     }
 

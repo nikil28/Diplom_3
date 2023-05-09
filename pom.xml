@@ -18,8 +18,8 @@
     </properties>
 
     <dependencies>
-        <!--Зависимости slf4j добавлены для того, чтобы убрать сообщение об ошибке при запуске тестов.-->
-        <!--slf4j используется не мной напрямую, а другими используемыми в проекте библиотеками.-->
+        <!--Зависимости slf4j добавлены для того, чтобы убрать сообщение об ошибке при запуске тестов-->
+        <!--slf4j используется не мной напрямую, а другими используемыми в проекте бибилиотеками-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -50,14 +50,16 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
+        <!-- модуль взаимодействия Allure и Junit -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>${allure.version}</version>
         </dependency>
+        <!-- модуль взаимодействия Allure и RestAssured -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
@@ -66,12 +68,12 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>5.0.1</version>
+            <version>5.3.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.9.0</version>
+            <version>2.10.1</version>
         </dependency>
 
     </dependencies>
@@ -79,6 +81,7 @@
     <build>
         <plugins>
             <plugin>
+                <!-- настройка плагина maven-surefire-plugin -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
@@ -95,6 +98,7 @@
                     </properties>
                     <systemProperties>
                         <property>
+                            <!-- папка, в которую будут генерироваться отчёты Allure -->
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
                         </property>
@@ -108,6 +112,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <!-- подключение плагина allure-maven для вызова функций Allure с помощью Maven -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
