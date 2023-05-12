@@ -18,7 +18,7 @@ public class HeaderPage {
     private SelenideElement feedLink;
 
     @FindBy(how = How.XPATH, using = "//a[@href='/account']")
-    private SelenideElement accountLink;
+    private static SelenideElement accountLink;
 
     @Step("Нажать на кнопку с логотипом")
     public HeaderPage clickHeaderLogoButton() {

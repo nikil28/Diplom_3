@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Condition.visible;
 
 public class ProfilePage {
     public static final String URL = "https://stellarburgers.nomoreparties.site/account/profile";
-
     @FindBy(how = How.XPATH, using = "//label[text()='Логин']/following-sibling::input")
     private SelenideElement loginInput;
 

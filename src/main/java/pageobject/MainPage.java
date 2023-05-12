@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Condition.*;
 public class MainPage {
     public static final String URL = "https://stellarburgers.nomoreparties.site/";
 
-
     @FindBy(how = How.XPATH, using = "//h1[text()='Соберите бургер']")
     private SelenideElement orderHeader;
 
@@ -77,5 +76,4 @@ public class MainPage {
     public boolean isMainPageLoaded() {
         return orderHeader.isDisplayed();
     }
-
 }

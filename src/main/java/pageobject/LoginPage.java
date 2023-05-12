@@ -11,6 +11,8 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage {
     public static final String URL = "https://stellarburgers.nomoreparties.site/login";
+    @FindBy(xpath = ".//a[(@class = 'Auth_link__1fOlj' and text()= 'Зарегистрироваться')]")
+    private SelenideElement buttonRegister;
 
     @FindBy(className = "HeaderPage")
     private HeaderPage header;
@@ -32,33 +34,32 @@ public class LoginPage {
         emailInput.sendKeys(email);
         return this;
     }
-
     @Step("Заполнить поле пароль")
     public LoginPage fillPasswordInput(String password) {
         passwordInput.sendKeys(password);
         return this;
     }
-
     @Step("Нажать кнопку войти")
     public LoginPage clickLoginButton() {
         loginButton.shouldBe(visible).click();
         return this;
     }
-
     @Step("Страница входа в систему исчезла")
     public MainPage loginPageDisappear() {
         loginHeader.should(disappear);
         return page(MainPage.class);
     }
-
     @Step("Загружена страница входа в систему")
     public LoginPage loginPageLoaded() {
         loginHeader.shouldBe(visible);
         return this;
     }
-
     @Step("Загружена ли страница входа в систему")
     public boolean isLoginPageLoaded() {
         return loginHeader.isDisplayed();
+    }
+    @Step("клик на кнопку Зарегистрироваться")
+    public void clickButtonRegister(){
+        buttonRegister.click();
     }
 }

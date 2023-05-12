@@ -4,3 +4,31 @@ i
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+k
+;.allure/allure-2.15.0/plugins/xray-plugin/allure-plugin.yml,a\9\a9a04a64f80992705dfcc9f07e3959b6e9c73d47
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+V
+&src/test/java/HeaderWithLoginTest.java,8\4\84ec07b18e059ccb5ddd5ac71183acd268188810
+Y
+)src/test/java/HeaderWithoutLoginTest.java,2\8\28b13ea0b8c298fd4cc3d9e1bf570ea630a5c127
+R
+"src/test/java/ConstructorTest.java,f\e\fe99239750662a1b2cb4a5328af2a380dcb62e9f
+O
+src/main/java/api/MyValues.java,c\6\c6703d606571abbee260d8973dcb4d4d398e4fd8
+O
+src/main/java/api/SignInRq.java,6\b\6b440b1fc5b49d963a9207f32fd36fd68296406b
+T
+$src/main/java/api/SuccessSignRs.java,6\1\61c6efc779d1b77c57bfe561c692e2184f20c909
+K
+src/main/java/api/User.java,9\6\96c6413404d9a87c52d6ea4f0b14efca37d8bc9e
+\
+,src/main/java/pageobject/FeedOrdersPage.java,8\4\84fe228d4f8d71d2cf9f89489dc667fe6aec6c14
+`
+0src/main/java/pageobject/ForgotPasswordPage.java,1\f\1fd45074842df1b8a305db1bfa339c5b4082c421
+X
+(src/main/java/pageobject/HeaderPage.java,b\5\b5fbecb72c41ff1b818b522beaa3ccf59115b424
+W
+'src/main/java/pageobject/LoginPage.java,5\2\52a99e4d618d48be3c2ba8f4c59d29438a6f2c32
+V
+&src/main/java/pageobject/MainPage.java,1\7\173ec7853ccc32e0208c0213214f7062f9921934

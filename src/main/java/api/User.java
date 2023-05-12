@@ -19,6 +19,7 @@ public class User {
     private static final String AUTHORISATION_PATH = "api/auth/";
     private static final Faker FAKER_RU = new Faker(new Locale("ru-RU"));
     private static final Faker FAKER_EN = new Faker(new Locale("en-GB"));
+    public static User getUserTokenUsingAPI;
     private String email;
     private String password;
     private String name;
@@ -62,7 +63,7 @@ public class User {
     }
 
     @Step("Получить токен пользователя с помощью API")
-    private String getUserTokenUsingAPI() {
+    public String getUserTokenUsingAPI() {
         String accessToken = "";
         ValidatableResponse response = given()
                 .spec(getBaseSpec())

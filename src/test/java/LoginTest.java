@@ -1,4 +1,4 @@
-import api.User;
+import api.*;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
@@ -13,14 +13,14 @@ public class LoginTest extends BaseTest {
     @Before
     @DisplayName("Создание случайного пользователя")
     public void setUp() {
-        validUserData = User.getRandomUserValidData();
+         validUserData = User.getRandomUserValidData();
 
-        open(RegistrationPage.URL, RegistrationPage.class)
-                .fillNameInput(validUserData.getName())
-                .fillEmailInput(validUserData.getEmail())
-                .fillPasswordInput(validUserData.getPassword())
-                .clickRegistrationButton()
-                .registrationPageDisappear();
+         open(RegistrationPage.URL, RegistrationPage.class)
+                         .fillNameInput(validUserData.getName())
+                         .fillEmailInput(validUserData.getEmail())
+                         .fillPasswordInput(validUserData.getPassword())
+                         .clickRegistrationButton()
+                         .registrationPageDisappear();
     }
 
     @Test
