@@ -1,65 +1,53 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Condition.disappear;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.page;
-
-public class LoginPage {
-    public static final String URL = "https://stellarburgers.nomoreparties.site/login";
-    @FindBy(xpath = ".//a[(@class = 'Auth_link__1fOlj' and text()= 'Зарегистрироваться')]")
-    private SelenideElement buttonRegister;
-
-    @FindBy(className = "HeaderPage")
-    private HeaderPage header;
-
-    @FindBy(how = How.XPATH, using = "//label[text()='Email']/following-sibling::input")
-    private SelenideElement emailInput;
-
-    @FindBy(how = How.XPATH, using = "//input[@name='Пароль']")
-    private SelenideElement passwordInput;
-
-    @FindBy(how = How.XPATH, using = "//button[text()='Войти']")
-    private SelenideElement loginButton;
-
-    @FindBy(how = How.XPATH, using = "//h2[text()='Вход']")
-    private SelenideElement loginHeader;
-
-    @Step("Заполнить поле email")
-    public LoginPage fillEmailInput(String email) {
-        emailInput.sendKeys(email);
+public class LoginPage extends BasePage{
+    SelenideElement authPageTitle = initSecondTitle("Вход");
+    SelenideElement emailInput = initInput("Email");
+    SelenideElement passwordInput = initInput("Пароль");
+    SelenideElement singInButton = initButton("Войти");
+    SelenideElement errorIncorrectPassword = initErrorUnderInput("Некорректный пароль");
+    private final String authPageUrl = "/login";
+    @Step("Открыть страницу входа")
+    public LoginPage open() {
+        Selenide.open(authPageUrl);
         return this;
     }
-    @Step("Заполнить поле пароль")
-    public LoginPage fillPasswordInput(String password) {
-        passwordInput.sendKeys(password);
+    @Step("Ввести адрес электронной почты")
+    public LoginPage enterEmail(String email) {
+        emailInput.setValue(email);
+        return this;
+    }
+    @Step("Ввести пароль")
+    public LoginPage enterPassword(String password) {
+        passwordInput.setValue(password);
         return this;
     }
     @Step("Нажать кнопку войти")
-    public LoginPage clickLoginButton() {
-        loginButton.shouldBe(visible).click();
+    public LoginPage clickButtonSingIn() {
+        singInButton.click();
         return this;
     }
-    @Step("Страница входа в систему исчезла")
-    public MainPage loginPageDisappear() {
-        loginHeader.should(disappear);
-        return page(MainPage.class);
-    }
-    @Step("Загружена страница входа в систему")
-    public LoginPage loginPageLoaded() {
-        loginHeader.shouldBe(visible);
+    @Step("Проверка ошибки ввода некорректного пароля")
+    public LoginPage checkOutputIncorrectPasswordError() {
+        errorIncorrectPassword.shouldBe(Condition.visible);
         return this;
     }
-    @Step("Загружена ли страница входа в систему")
-    public boolean isLoginPageLoaded() {
-        return loginHeader.isDisplayed();
+    @Step("Проверка названия входи, оно отображается")
+    public LoginPage checkTitle() {
+        authPageTitle.shouldBe(Condition.visible);
+        return this;
     }
-    @Step("клик на кнопку Зарегистрироваться")
-    public void clickButtonRegister(){
-        buttonRegister.click();
+    @Step("Авторизация")
+    public LoginPage auth(String email, String password) {
+        this.open()
+                .enterEmail(email)
+                .enterPassword(password)
+                .clickButtonSingIn();
+        return this;
     }
 }

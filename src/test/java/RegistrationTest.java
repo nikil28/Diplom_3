@@ -1,134 +1,64 @@
-import api.User;
+import User.CreateAndAuthUserResponse;
+import User.User;
+import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.RegistrationPage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Locale;
 
-import static com.codeborne.selenide.Selenide.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-@DisplayName("Регистрация")
-public class RegistrationTest extends BaseTest {
-    private final List<User> userListForDelete = new ArrayList<>();
+import static io.restassured.RestAssured.given;
+
+@DisplayName("Тесты регистрации")
+public class RegistrationTest extends BaseTest{
+    static Faker faker = new Faker(new Locale("ru"));
+    LoginPage loginPage = new LoginPage();
+    RegistrationPage registrationPage = new RegistrationPage();
+
+    public static String email = faker.internet().emailAddress();
+    public static String password = faker.internet().password(7,10);
+    public static String invalidPassword = faker.internet().password(1,4);
+    public static String name = faker.name().fullName();
+    public static String tokenUser;
+
+    @AfterClass
+    public static void deleteUser() {
+        User user = new User(email,password);
+        CreateAndAuthUserResponse response = given().spec(specification)
+                .body(user)
+                .when()
+                .post("/api/auth/login").as(CreateAndAuthUserResponse.class);
+        tokenUser = response.getAccessToken();
+
+        given().spec(specification)
+                .header("Authorization", tokenUser)
+                .when()
+                .delete("api/auth/user")
+                .then()
+                .statusCode(202);
+    }
 
     @Test
     @DisplayName("Проверка регистрации нового пользователя с валидными данными")
-    public void newUserIsRegisteredWithValidDataTest() {
-        User user = User.getRandomUserValidData();
-        open(RegistrationPage.URL, RegistrationPage.class)
-                .fillNameInput(user.getName())
-                .fillEmailInput(user.getEmail())
-                .fillPasswordInput(user.getPassword())
-                .clickRegistrationButton()
-                .registrationPageDisappear();
-        userListForDelete.add(user);
-        String currentURL = webdriver().driver().url();
-        assertEquals(LoginPage.URL, currentURL);
-    }
-
-    @Test
-    @DisplayName("Повторная регистрация пользователя с существующей почтой")
-    public void userIsNotRegisteredWithRepeatedEmailTest() {
-        User userValid = User.getRandomUserValidData();
-        open(RegistrationPage.URL, RegistrationPage.class)
-                .fillNameInput(userValid.getName())
-                .fillEmailInput(userValid.getEmail())
-                .fillPasswordInput(userValid.getPassword())
-                .clickRegistrationButton();
-        userListForDelete.add(userValid);
-
-        User userNotValid = User.getRandomUserValidData();
-        userNotValid.setEmail(userValid.getEmail());
-        boolean isUserAlreadyExistErrorMessageDisplayed =
-                open(RegistrationPage.URL, RegistrationPage.class)
-                        .fillNameInput(userNotValid.getName())
-                        .fillEmailInput(userNotValid.getEmail())
-                        .fillPasswordInput(userNotValid.getPassword())
-                        .clickRegistrationButton()
-                        .isUserAlreadyExistErrorMessageDisplayed();
-        userListForDelete.add(userNotValid);
-        assertTrue("Не отобразилось сообщение об ошибке", isUserAlreadyExistErrorMessageDisplayed);
-    }
-
-    @Test
-    @DisplayName("Проверка, что новый пользователь не зарегистрирован без почты")
-    public void newUserIsNotRegisteredWithoutEmailTest() {
-        User userNotValid = User.getRandomUserValidData();
-        userNotValid.setEmail("");
-        open(RegistrationPage.URL, RegistrationPage.class)
-                .fillNameInput(userNotValid.getName())
-                .fillEmailInput(userNotValid.getEmail())
-                .fillPasswordInput(userNotValid.getPassword())
-                .clickRegistrationButton();
-        userListForDelete.add(userNotValid);
-        String currentURL = webdriver().driver().url();
-        assertEquals(RegistrationPage.URL, currentURL);
-    }
-
-    @Test
-    @DisplayName("Проверка, что новый пользователь не зарегистрирован без имени")
-    public void newUserIsNotRegisteredWithoutNameTest() {
-        User userNotValid = User.getRandomUserValidData();
-        userNotValid.setName("");
-        open(RegistrationPage.URL, RegistrationPage.class)
-                .fillNameInput(userNotValid.getName())
-                .fillEmailInput(userNotValid.getEmail())
-                .fillPasswordInput(userNotValid.getEmail())
-                .clickRegistrationButton();
-        userListForDelete.add(userNotValid);
-        String currentURL = webdriver().driver().url();
-        assertEquals(RegistrationPage.URL, currentURL);
-    }
-
-    @Test
-    @DisplayName("Проверка, что новый пользователь не зарегистрирован без пароля")
-    public void newUserIsNotRegisteredWithoutPasswordTest() {
-        User userNotValid = User.getRandomUserValidData();
-        userNotValid.setPassword("");
-        open(RegistrationPage.URL, RegistrationPage.class)
-                .fillNameInput(User.getRandomValidName())
-                .fillEmailInput(User.getRandomValidEmail())
-                .fillPasswordInput("")
-                .clickRegistrationButton();
-        userListForDelete.add(userNotValid);
-        String currentURL = webdriver().driver().url();
-        assertEquals(RegistrationPage.URL, currentURL);
+    public void registerWithValidData() {
+        registrationPage.open()
+                .enterName(name)
+                .enterEmail(email)
+                .enterPassword(password)
+                .clickSingUpButton();
+        loginPage.checkTitle();
     }
 
     @Test
     @DisplayName("Попытка регистрации с паролем менее 6 символов")
-    public void newUserIsNotRegisteredWithTooShortPasswordTest() {
-        User userNotValid = User.getRandomUserValidData();
-        userNotValid.setPassword(User.getRandomTooShotPassword());
-        boolean isIncorrectPasswordErrorMessageDisplayed =
-                open(RegistrationPage.URL, RegistrationPage.class)
-                        .fillNameInput(userNotValid.getName())
-                        .fillEmailInput(userNotValid.getEmail())
-                        .fillPasswordInput(userNotValid.getPassword())
-                        .clickRegistrationButton()
-                        .isIncorrectPasswordErrorMessageDisplayed();
-        userListForDelete.add(userNotValid);
-        for (User user : userListForDelete) {
-            if (user != null) {
-                user.deleteUserUsingAPI();
-            }
-        }
-        assertTrue("Не отобразилось сообщение об ошибке", isIncorrectPasswordErrorMessageDisplayed);
-    }
-
-    @After
-    @DisplayName("Удаление пользователя и очистка файлов cookies")
-    public void cleanDate() {
-        for (User user : userListForDelete) {
-            if (user != null) {
-                user.deleteUserUsingAPI();
-            }
-        }
-        clearBrowserCookies();
-        clearBrowserLocalStorage();
+    public void registerWithIncorrectPassword() {
+        registrationPage.open()
+                .enterName(name)
+                .enterEmail(email)
+                .enterPassword(invalidPassword)
+                .clickSingUpButton()
+                .checkErrorUnderPasswordInput();
     }
 }

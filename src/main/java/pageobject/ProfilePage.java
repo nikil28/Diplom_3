@@ -1,41 +1,30 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Condition.disappear;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 
-public class ProfilePage {
-    public static final String URL = "https://stellarburgers.nomoreparties.site/account/profile";
-    @FindBy(how = How.XPATH, using = "//label[text()='Логин']/following-sibling::input")
-    private SelenideElement loginInput;
+public class ProfilePage extends BasePage {
+    SelenideElement descriptionPage = $(byText("В этом разделе вы можете изменить свои персональные данные"));
+    SelenideElement exitButton = initButton("Выход");
+    private final String accountPageUrl = "/account/profile";
 
-    @FindBy(how = How.XPATH, using = "//button[text()='Выход']")
-    private SelenideElement logoutButton;
-
-    @Step("Получить данные для входа на странице профиля")
-    public String getLoginInput() {
-        return loginInput.shouldBe(visible).getValue();
-    }
-
-    @Step("Нажать кнопку выхода на странице профиля")
-    public ProfilePage clickLogoutButton() {
-        logoutButton.shouldBe(visible).click();
+    public ProfilePage open() {
+        Selenide.open(accountPageUrl);
         return this;
     }
-
-    @Step("Загружена страница профиля")
-    public ProfilePage profilePageLoaded() {
-        logoutButton.shouldBe(visible);
+    @Step("Найти описание страницы  этом разделе вы можете изменить свои персональные данные")
+    public ProfilePage findDescriptionPage() {
+        descriptionPage.shouldBe(Condition.visible);
         return this;
     }
-
-    @Step("Странница профиля исчезла")
-    public ProfilePage profilePageDisappear() {
-        logoutButton.should(disappear);
+    @Step("Нажать кнопку выход")
+    public ProfilePage clickExitButton() {
+        exitButton.click();
         return this;
     }
 }

@@ -1,83 +1,96 @@
-import api.*;
+import User.CreateAndAuthUserResponse;
+import User.User;
+import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import pageobject.*;
-import static com.codeborne.selenide.Selenide.*;
-import static org.junit.Assert.assertEquals;
-@DisplayName("Вход в личный кабинет")
-public class LoginTest extends BaseTest {
-    private User validUserData;
 
-    @Before
-    @DisplayName("Создание случайного пользователя")
-    public void setUp() {
-         validUserData = User.getRandomUserValidData();
+import java.util.Locale;
 
-         open(RegistrationPage.URL, RegistrationPage.class)
-                         .fillNameInput(validUserData.getName())
-                         .fillEmailInput(validUserData.getEmail())
-                         .fillPasswordInput(validUserData.getPassword())
-                         .clickRegistrationButton()
-                         .registrationPageDisappear();
+import static io.restassured.RestAssured.given;
+
+@DisplayName("Тесты авторизации")
+public class LoginTest extends BaseTest{
+    static Faker faker = new Faker(new Locale("ru"));
+    LoginPage loginPage = new LoginPage();
+    RegistrationPage registrationPage = new RegistrationPage();
+    MainPage mainPage = new MainPage();
+    ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
+    HeaderPage headerPage = new HeaderPage();
+    public static String email = faker.internet().emailAddress();
+    public static String password = faker.internet().password(7,10);
+    public static String invalidPassword = faker.internet().password(1,4);
+    public static String name = faker.name().fullName();
+    public static String tokenUser;
+
+     @BeforeClass
+    public static void createUser() {
+        User user = new User(email, password, name);
+        CreateAndAuthUserResponse responseUser =
+                given().spec(specification)
+                        .body(user)
+                        .when()
+                        .post("/api/auth/register")
+                        .body().as(CreateAndAuthUserResponse.class);
+        tokenUser = responseUser.getAccessToken();
+    }
+
+    @AfterClass
+    public static void deleteUser() {
+        given().spec(specification)
+                .header("Authorization", tokenUser)
+                .when()
+                .delete("api/auth/user")
+                .then()
+                .statusCode(202);
     }
 
     @Test
-    @DisplayName("Вход через кнопку Личный кабинет")
-    public void headerAccountButtonLoginWithValidDataTest() {
-        open(MainPage.URL, HeaderPage.class).clickHeaderAccountButton();
-        checkLoginUserWithValidData();
+    @DisplayName("Авторизация с валидными данными")
+    public void authWithValidData() {
+        loginPage.auth(email, password);
+        mainPage.checkTitle();
     }
 
     @Test
-    @DisplayName("Вход по кнопке Войти в аккаунт на главной")
-    public void signInToAccountButtonLoginWithValidDataTest() {
-        open(MainPage.URL, MainPage.class).clickSignInToAccountButton();
-        checkLoginUserWithValidData();
+    @DisplayName("Авторизация с невалидными данными")
+    public void authWithInvalidData() {
+        loginPage.auth(email, invalidPassword)
+                .checkOutputIncorrectPasswordError();
     }
 
     @Test
-    @DisplayName("Вход через кнопку в форме регистрации")
-    public void linkLoginInRegistrationPageWithValidDataTest() {
-        open(RegistrationPage.URL, RegistrationPage.class).clickLoginLink();
-        checkLoginUserWithValidData();
+    @DisplayName("Авторизация по кнопке «Войти в аккаунт» на главной")
+    public void authInMainPage() {
+        mainPage.open().clickSingInAccountButton();
+        loginPage.auth(email, password);
+        mainPage.checkTitle();
     }
 
     @Test
-    @DisplayName("Вход через кнопку в форме восстановления пароля")
-    public void linkLoginInForgotPasswordPageWithValidDataTest() {
-        open(ForgotPasswordPage.URL, ForgotPasswordPage.class).clickLoginLink();
-        checkLoginUserWithValidData();
+    @DisplayName("Авторизация через кнопку в форме регистрации")
+    public void authInRegisterPage() {
+        registrationPage.open().clickSingIn();
+        loginPage.auth(email, password);
+        mainPage.checkTitle();
     }
 
-    @After
-    @DisplayName("Перейти в профиль и выйти из системы, удалить пользователя, очистить файлы cookies")
-    public void cleanDate() {
-        page(HeaderPage.class).clickHeaderAccountButton();
-        page(ProfilePage.class)
-                .profilePageLoaded()
-                .clickLogoutButton()
-                .profilePageDisappear();
-        if (validUserData != null) {
-            validUserData.deleteUserUsingAPI();
-        }
-        clearBrowserCookies();
-        clearBrowserLocalStorage();
+    @Test
+    @DisplayName("Авторизация через кнопку «Личный кабинет»")
+    public void authInAccount() {
+        headerPage.open()
+                .clickAccountButton();
+        loginPage.auth(email, password);
+        mainPage.checkTitle();
     }
 
-    private void checkLoginUserWithValidData() {
-        page(LoginPage.class)
-                .fillEmailInput(validUserData.getEmail())
-                .fillPasswordInput(validUserData.getPassword())
-                .clickLoginButton()
-                .loginPageDisappear()
-                .mainPageLoaded();
-        String currentURL = webdriver().driver().url();
-        assertEquals("Залогиниться не удалось", MainPage.URL, currentURL);
-
-        page(HeaderPage.class).clickHeaderAccountButton();
-        String actualLogin = page(ProfilePage.class).getLoginInput();
-        assertEquals("Логин не совпадает", validUserData.getEmail(), actualLogin);
+    @Test
+    @DisplayName("Авторизация через кнопку в форме восстановления пароля")
+    public void authInForgotPasswordPage() {
+        forgotPasswordPage.open().clickToLinkSingIn();
+        loginPage.auth(email, password);
+        mainPage.checkTitle();
     }
 }

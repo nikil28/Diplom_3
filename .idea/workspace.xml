@@ -5,22 +5,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00237f1e-997e-417f-80da-7d44a487cd9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/MyValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/SignInRq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/SuccessSignRs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/UserClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SuccessfulRegistrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User/CreateAndAuthUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageobject/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TransitionsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/0509a393-a1b6-4782-b344-f0c0c652e863-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/054665a8-0e3d-4e4f-b1a0-dc681feea941-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/3e558b47-1815-4965-a68a-4cd2af8ed985-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/42749c95-c60f-4859-b432-86914ec922af-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/4dee3ec4-3d2a-489d-8499-dc6c5ab1c7fa-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/55b49b3b-c401-461a-9025-fa041dad92ef-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/69c302dd-aa05-4d5e-9fef-fdba7c54cf7c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/700ea93b-4770-4b9a-b7ee-fe0ad746af06-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/8f08403f-d729-4749-8b1b-468aa2eb1a5a-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/90d1a215-0190-4aa3-9ee8-fd737d603667-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/a0dd54c5-bacf-41eb-87f2-f3dddebbfb27-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/aed56998-7709-4190-b3e5-e7d14dffe9f7-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/ceaac859-3202-4c5d-86cc-d7e77812d6bf-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/e0cc21f2-8172-47b0-b94f-ceacb7dc859d-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/allure-results/e42e5576-0287-4b43-afba-a3c15b18a63e-result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Allure Report.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Allure Report.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/MyValues.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/SignInRq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/SuccessSignRs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/UserClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/FeedOrdersPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/ForgotPasswordPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/ForgotPasswordPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/HeaderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/HeaderPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/ProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobject/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobject/RegistrationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HeaderWithLoginTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HeaderWithoutLoginTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LogoutTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProfileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SuccessfulRegistrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/02d495e0-2d75-4267-855c-c353e174f357-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/046d6332-ec76-4038-9af3-ea071c35efb3-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/13f3b99e-bbef-4b45-8f8b-c0c28225172d-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/2481a5a4-e795-4006-a9c2-60fb4e46602a-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/258479ce-cc94-4f7b-9f68-93c3e88b3362-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/2a7fda2d-c740-4f3b-a1d2-0d87ddec287d-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/366969cd-9749-4be8-83e2-6acc3661ebf5-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/38990b1d-322d-488d-813e-93f698c993cd-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/3b52f36f-7413-4f0a-bd03-01c3f445085f-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/5797bd52-5d65-40c8-81e1-aba3714d21c4-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/5afbbef2-1f7b-4b50-9b82-055504d223ca-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/6a9ff87e-3e56-45c5-80e8-9c725469a417-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/8f865aa7-cc4d-42a7-8a5a-8f437875a085-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/9a0a5869-7003-4018-9921-e3dde7b89b0c-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/9fd7be93-2f93-4782-855e-e35389a69a1e-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/a2cbc4f5-604a-4570-932a-15ce93360e0c-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/a4c75c35-81fd-45bf-8b01-13cb81d17156-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/a71ad8d5-ef4f-461c-a63e-87ee75a26c88-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/a83b83b6-837f-48bf-b6ae-5d3578b8a224-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/allure.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/allure-results/allure.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/c8ac6c5b-e030-4cf3-a936-3c65b2372bc8-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/db05e081-8d45-4cf5-b0a1-870f7afec92c-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/e465d0d7-2fc5-43ea-bbc1-90e0629d8c56-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/edd1d2c5-3153-4ab2-b0c2-f64f85fb4d5a-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/ee81b659-a8fa-4eb1-a832-ffd1848984e9-result.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,18 +138,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/cygwin64/home/Nikitin/Diplom_3",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/cygwin64/home/Nikitin/Diplom_2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="helpers.rest_api_steps" />
@@ -104,63 +158,62 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SuccessfulRegistrationTest.successfulRegistration">
-    <configuration name="ConstructorTest.clickTabBunsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginTest.authInMainPage">
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
-      <option name="METHOD_NAME" value="clickTabBunsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationTest.newUserIsRegisteredWithValidDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RegistrationTest" />
-      <option name="METHOD_NAME" value="newUserIsRegisteredWithValidDataTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SuccessfulRegistrationTest.successfulRegistration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SuccessfulRegistrationTest" />
-      <option name="METHOD_NAME" value="successfulRegistration" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass.testUserRegistrationAndVerification" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.authInAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
-      <option name="METHOD_NAME" value="testUserRegistrationAndVerification" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="METHOD_NAME" value="authInAccount" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.authInMainPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="METHOD_NAME" value="authInMainPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.authWithValidData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="METHOD_NAME" value="authWithValidData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransitionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransitionsTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SuccessfulRegistrationTest.successfulRegistration" />
-        <item itemvalue="JUnit.RegistrationTest.newUserIsRegisteredWithValidDataTest" />
-        <item itemvalue="JUnit.ConstructorTest.clickTabBunsTest" />
-        <item itemvalue="JUnit.TestClass.testUserRegistrationAndVerification" />
-        <item itemvalue="JUnit.TestClass" />
+        <item itemvalue="JUnit.LoginTest.authInMainPage" />
+        <item itemvalue="JUnit.TransitionsTest" />
+        <item itemvalue="JUnit.LoginTest.authInAccount" />
+        <item itemvalue="JUnit.LoginTest.authWithValidData" />
+        <item itemvalue="JUnit.LoginTest" />
       </list>
     </recent_temporary>
   </component>

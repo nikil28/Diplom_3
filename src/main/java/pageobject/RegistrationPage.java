@@ -1,88 +1,52 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Condition.*;
+public class RegistrationPage extends BasePage {
+    SelenideElement nameInput = initInput("Имя");
+    SelenideElement emailInput = initInput("Email");
+    SelenideElement passwordInput = initInput("Пароль");
+    SelenideElement registerButton = initButton("Зарегистрироваться");
+    SelenideElement linkToSingIn = initLinkByText("Войти");
+    SelenideElement errorIncorrectPassword = initErrorUnderInput("Некорректный пароль");
 
-public class RegistrationPage {
-    public static final String URL = "https://stellarburgers.nomoreparties.site/register";
-
-    @FindBy(how = How.XPATH, using = "//label[text()='Имя']/following-sibling::input")
-    private SelenideElement nameInput;
-
-    @FindBy(how = How.XPATH, using = "//label[text()='Email']/following-sibling::input")
-    private SelenideElement emailInput;
-
-    @FindBy(how = How.XPATH, using = "//input[@name='Пароль']")
-    private SelenideElement passwordInput;
-
-    @FindBy(how = How.XPATH, using = "//button[text()='Зарегистрироваться']")
-    private SelenideElement registerButton;
-
-    @FindBy(how = How.XPATH, using = "//h2[text()='Регистрация']")
-    private SelenideElement registrationHeader;
-
-    @FindBy(how = How.XPATH, using = "//p[text()='Такой пользователь уже существует']")
-    private SelenideElement userAlreadyExistErrorMessage;
-
-    @FindBy(how = How.XPATH, using = "//p[text()='Некорректный пароль']")
-    private SelenideElement incorrectPasswordErrorMessage;
-
-    @FindBy(how = How.XPATH, using = "//a[@href='/login']")
-    private SelenideElement loginLink;
-
+    private final String RegistrationPageUrl = "/register";
+    @Step("Открыть страницу регистрация")
+    public RegistrationPage open() {
+        Selenide.open(RegistrationPageUrl);
+        return this;
+    }
     @Step("ввести имя на странице регистрации")
-    public RegistrationPage fillNameInput(String name) {
-        nameInput.sendKeys(name);
+    public RegistrationPage enterName(String name) {
+        nameInput.setValue(name);
         return this;
     }
-
     @Step("Ввести email на странице регистрации")
-    public RegistrationPage fillEmailInput(String email) {
-        emailInput.sendKeys(email);
+    public RegistrationPage enterEmail(String email) {
+        emailInput.setValue(email);
         return this;
     }
-
     @Step("Ввести пароль на странице регистрации")
-    public RegistrationPage fillPasswordInput(String password) {
-        passwordInput.sendKeys(password);
+    public RegistrationPage enterPassword(String password) {
+        passwordInput.setValue(password);
         return this;
     }
-
-    @Step("Нажать кнопку регистрации на странице регистрации")
-    public RegistrationPage clickRegistrationButton() {
-        registerButton.shouldBe(visible).click();
+    @Step("Нажать кнопку Зарегистрироваться")
+    public RegistrationPage clickSingUpButton() {
+        registerButton.click();
         return this;
     }
-
-    @Step("Нажать на ссылку для входа на странице регистрации")
-    public RegistrationPage clickLoginLink() {
-        loginLink.shouldBe(visible).click();
+    @Step("Проверка ошибки Некорректный пароль")
+    public RegistrationPage checkErrorUnderPasswordInput() {
+        errorIncorrectPassword.shouldBe(Condition.visible);
         return this;
     }
-
-    @Step("Отобразится сообщение об ошибке Пользователь уже существует")
-    public boolean isUserAlreadyExistErrorMessageDisplayed() {
-        return userAlreadyExistErrorMessage.should(exist).isDisplayed();
-    }
-
-    @Step("Отобразится сообщение об ошибке Неверный пароль")
-    public boolean isIncorrectPasswordErrorMessageDisplayed() {
-        return incorrectPasswordErrorMessage.should(exist).isDisplayed();
-    }
-
-    @Step("Подождите, пока не откроется страница регистрации")
-    public RegistrationPage registrationPageDisappear() {
-        registrationHeader.should(disappear);
-        return this;
-    }
-
-    @Step("Подождите, пока загрузится страница регистрации")
-    public RegistrationPage registrationPageLoaded() {
-        registrationHeader.shouldBe(visible);
+    @Step("Нажать на кнопку Войти")
+    public RegistrationPage clickSingIn() {
+        linkToSingIn.click();
         return this;
     }
 }

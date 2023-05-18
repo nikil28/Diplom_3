@@ -1,46 +1,35 @@
 package pageobject;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.$;
 
-public class HeaderPage {
-    @FindBy(how = How.XPATH, using = "//div[contains(@class, 'logo')]/a[@href='/']")
-    private SelenideElement logoLink;
-
-    @FindBy(how = How.XPATH, using = "//a[contains(@class, 'header')][@href='/']")
-    private SelenideElement constructorLink;
-
-    @FindBy(how = How.XPATH, using = "//a[@href='/feed']")
-    private SelenideElement feedLink;
-
-    @FindBy(how = How.XPATH, using = "//a[@href='/account']")
-    private static SelenideElement accountLink;
-
-    @Step("Нажать на кнопку с логотипом")
-    public HeaderPage clickHeaderLogoButton() {
-        logoLink.shouldBe(visible).click();
+public class HeaderPage extends BasePage{
+    SelenideElement accountButton = $(byXpath("//p[text()='Личный Кабинет']/ancestor::a"));
+    SelenideElement logo = $(byXpath("//div[@class='AppHeader_header__logo__2D0X2']/a"));
+    SelenideElement constructorButton = $(byXpath("//p[text()='Конструктор']/ancestor::a[@href='/']"));
+    private final String headerElementUrl = "/";
+    @Step("Открыть главную страницу")
+    public HeaderPage open() {
+        Selenide.open(headerElementUrl);
         return this;
     }
-
-    @Step("Нажать на кнопку конструктор")
-    public HeaderPage clickHeaderConstructorButton() {
-        constructorLink.shouldBe(visible).click();
+    @Step("Нажать кнопку личный кабинет")
+    public HeaderPage clickAccountButton() {
+        accountButton.click();
         return this;
     }
-
-    @Step("Нажать на кнопку лента заказов")
-    public HeaderPage clickHeaderFeedButton() {
-        feedLink.shouldBe(visible).click();
+    @Step("Нажать на логотип")
+    public HeaderPage clickToLogo() {
+        logo.click();
         return this;
     }
-
-    @Step("Нажать на кнопку личный кабинет")
-    public HeaderPage clickHeaderAccountButton() {
-        accountLink.shouldBe(visible).click();
+    @Step("Нажать на конструктор")
+    public HeaderPage clickToConstructor() {
+        constructorButton.click();
         return this;
     }
 }
