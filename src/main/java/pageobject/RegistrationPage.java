@@ -6,12 +6,12 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 public class RegistrationPage extends BasePage {
-    SelenideElement nameInput = initInput("Имя");
-    SelenideElement emailInput = initInput("Email");
-    SelenideElement passwordInput = initInput("Пароль");
-    SelenideElement registerButton = initButton("Зарегистрироваться");
-    SelenideElement linkToSingIn = initLinkByText("Войти");
-    SelenideElement errorIncorrectPassword = initErrorUnderInput("Некорректный пароль");
+    private final SelenideElement nameInput = initInput("Имя");
+    private final SelenideElement emailInput = initInput("Email");
+    private final SelenideElement passwordInput = initInput("Пароль");
+    private final SelenideElement registerButton = initButton("Зарегистрироваться");
+    private final SelenideElement linkToSingIn = initLinkByText("Войти");
+    private final SelenideElement errorIncorrectPassword = initErrorUnderInput("Некорректный пароль");
 
     private final String RegistrationPageUrl = "/register";
     @Step("Открыть страницу регистрация")

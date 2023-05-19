@@ -6,11 +6,11 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 public class LoginPage extends BasePage{
-    SelenideElement authPageTitle = initSecondTitle("Вход");
-    SelenideElement emailInput = initInput("Email");
-    SelenideElement passwordInput = initInput("Пароль");
-    SelenideElement singInButton = initButton("Войти");
-    SelenideElement errorIncorrectPassword = initErrorUnderInput("Некорректный пароль");
+    private final SelenideElement authPageTitle = initSecondTitle("Вход");
+    private final SelenideElement emailInput = initInput("Email");
+    private final SelenideElement passwordInput = initInput("Пароль");
+    private final SelenideElement singInButton = initButton("Войти");
+    private final SelenideElement errorIncorrectPassword = initErrorUnderInput("Некорректный пароль");
     private final String authPageUrl = "/login";
     @Step("Открыть страницу входа")
     public LoginPage open() {

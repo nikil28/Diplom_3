@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ProfilePage extends BasePage {
-    SelenideElement descriptionPage = $(byText("В этом разделе вы можете изменить свои персональные данные"));
-    SelenideElement exitButton = initButton("Выход");
+    private final SelenideElement descriptionPage = $(byText("В этом разделе вы можете изменить свои персональные данные"));
+    private final SelenideElement exitButton = initButton("Выход");
     private final String accountPageUrl = "/account/profile";
 
     public ProfilePage open() {

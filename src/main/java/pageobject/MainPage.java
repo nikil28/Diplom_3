@@ -10,20 +10,20 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage extends BasePage {
-    SelenideElement singInAccountButton = initButton("Войти в аккаунт");
+    private final SelenideElement singInAccountButton = initButton("Войти в аккаунт");
     String sauce = "Соусы";
     String bun = "Булки";
     String ingredient = "Начинки";
 
-    SelenideElement sauceElement = $(byXpath(String.format("//span[text()='Соусы']", sauce)));
-    SelenideElement bunElement = $(byXpath(String.format("//span[text()='Булки']", bun)));
-    SelenideElement ingredientElement = $(byXpath(String.format("//span[text()='Начинки']", ingredient)));
+    private final SelenideElement sauceElement = $(byXpath(String.format("//span[text()='Соусы']", sauce)));
+    private final SelenideElement bunElement = $(byXpath(String.format("//span[text()='Булки']", bun)));
+    private final SelenideElement ingredientElement = $(byXpath(String.format("//span[text()='Начинки']", ingredient)));
 
-    SelenideElement sauceTitle = initSecondTitle(sauce);
-    SelenideElement ingredientTitle = initSecondTitle(ingredient);
-    SelenideElement bunTitle = initSecondTitle(bun);
+    private final SelenideElement sauceTitle = initSecondTitle(sauce);
+    private final SelenideElement ingredientTitle = initSecondTitle(ingredient);
+    private final SelenideElement bunTitle = initSecondTitle(bun);
 
-    String activeTab = "tab_tab_type_current";
+    private final String activeTab = "tab_tab_type_current";
     private final String mainPageUrl = "/";
     @Step("Открыть главную страницу")
     public MainPage open() {
