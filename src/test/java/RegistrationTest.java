@@ -1,44 +1,23 @@
-import User.CreateAndAuthUserResponse;
-import User.User;
-import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.AfterClass;
 import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.RegistrationPage;
+import user.User;
 
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 
-import static io.restassured.RestAssured.given;
 
 @DisplayName("Тесты регистрации")
-public class RegistrationTest extends BaseTest{
-    static Faker faker = new Faker(new Locale("ru"));
+public class RegistrationTest extends BaseApi {
+    private final List<User> userListForDelete = new ArrayList<>();
     LoginPage loginPage = new LoginPage();
     RegistrationPage registrationPage = new RegistrationPage();
-
     public static String email = faker.internet().emailAddress();
-    public static String password = faker.internet().password(7,10);
-    public static String invalidPassword = faker.internet().password(1,4);
+    public static String password = faker.internet().password(7, 10);
+    public static String invalidPassword = faker.internet().password(1, 4);
     public static String name = faker.name().fullName();
-    public static String tokenUser;
 
-    @AfterClass
-    public static void deleteUser() {
-        User user = new User(email,password);
-        CreateAndAuthUserResponse response = given().spec(specification)
-                .body(user)
-                .when()
-                .post("/api/auth/login").as(CreateAndAuthUserResponse.class);
-        tokenUser = response.getAccessToken();
-
-        given().spec(specification)
-                .header("Authorization", tokenUser)
-                .when()
-                .delete("api/auth/user")
-                .then()
-                .statusCode(202);
-    }
 
     @Test
     @DisplayName("Проверка регистрации нового пользователя с валидными данными")
@@ -60,5 +39,11 @@ public class RegistrationTest extends BaseTest{
                 .enterPassword(invalidPassword)
                 .clickSingUpButton()
                 .checkErrorUnderPasswordInput();
+        userListForDelete.add(new User(name, password, email));
+        for (User user : userListForDelete) {
+            if (user != null) {
+                BaseApi.deleteUser();
+            }
+        }
     }
 }

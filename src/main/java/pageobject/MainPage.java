@@ -15,9 +15,9 @@ public class MainPage extends BasePage {
     String bun = "Булки";
     String ingredient = "Начинки";
 
-    SelenideElement sauceElement = $(byXpath(String.format("//span[text()='%s']/..", sauce)));
+    SelenideElement sauceElement = $(byXpath(String.format("//span[text()='Соусы']", sauce)));
     SelenideElement bunElement = $(byXpath(String.format("//span[text()='Булки']", bun)));
-    SelenideElement ingredientElement = $(byXpath(String.format("//span[text()='%s']/..", ingredient)));
+    SelenideElement ingredientElement = $(byXpath(String.format("//span[text()='Начинки']", ingredient)));
 
     SelenideElement sauceTitle = initSecondTitle(sauce);
     SelenideElement ingredientTitle = initSecondTitle(ingredient);

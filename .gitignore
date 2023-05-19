@@ -7,7 +7,7 @@
 /target/test-classes/
 /.idea/
 /build/
-.gitignore
-/.idea/
 /.idea/sonarlint/
 /.allure/
+/.idea/
+.gitignore

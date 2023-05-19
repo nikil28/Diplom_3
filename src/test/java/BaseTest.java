@@ -1,21 +1,15 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import io.restassured.RestAssured;
-import io.restassured.specification.RequestSpecification;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class BaseTest {
-    public static RequestSpecification specification;
 
+public class BaseTest {
+    public static String BASE_URL = "https://stellarburgers.nomoreparties.site";
     @BeforeClass
     public static void configureDriver() {
-        Configuration.baseUrl = "https://stellarburgers.nomoreparties.site";
-        specification = RestAssured.given();
-        specification.baseUri("https://stellarburgers.nomoreparties.site");
-        specification.header("Content-type", "application/json");
-
+        Configuration.baseUrl = BASE_URL;
         System.setProperty("browser", "chrome"); // для запуска в chrome или firefox или yandex
         String browser = System.getProperty("browser");
         if(browser.equals("chrome")) {

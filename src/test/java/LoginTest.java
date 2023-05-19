@@ -1,51 +1,14 @@
-import User.CreateAndAuthUserResponse;
-import User.User;
-import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import pageobject.*;
 
-import java.util.Locale;
-
-import static io.restassured.RestAssured.given;
-
 @DisplayName("Тесты авторизации")
-public class LoginTest extends BaseTest{
-    static Faker faker = new Faker(new Locale("ru"));
+public class LoginTest extends BaseApi{
     LoginPage loginPage = new LoginPage();
     RegistrationPage registrationPage = new RegistrationPage();
     MainPage mainPage = new MainPage();
     ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
     HeaderPage headerPage = new HeaderPage();
-    public static String email = faker.internet().emailAddress();
-    public static String password = faker.internet().password(7,10);
-    public static String invalidPassword = faker.internet().password(1,4);
-    public static String name = faker.name().fullName();
-    public static String tokenUser;
-
-     @BeforeClass
-    public static void createUser() {
-        User user = new User(email, password, name);
-        CreateAndAuthUserResponse responseUser =
-                given().spec(specification)
-                        .body(user)
-                        .when()
-                        .post("/api/auth/register")
-                        .body().as(CreateAndAuthUserResponse.class);
-        tokenUser = responseUser.getAccessToken();
-    }
-
-    @AfterClass
-    public static void deleteUser() {
-        given().spec(specification)
-                .header("Authorization", tokenUser)
-                .when()
-                .delete("api/auth/user")
-                .then()
-                .statusCode(202);
-    }
 
     @Test
     @DisplayName("Авторизация с валидными данными")

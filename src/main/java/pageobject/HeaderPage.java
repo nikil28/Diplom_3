@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class HeaderPage extends BasePage{
-    SelenideElement accountButton = $(byXpath("//p[text()='Личный Кабинет']/ancestor::a"));
-    SelenideElement logo = $(byXpath("//div[@class='AppHeader_header__logo__2D0X2']/a"));
-    SelenideElement constructorButton = $(byXpath("//p[text()='Конструктор']/ancestor::a[@href='/']"));
+    SelenideElement accountButton = $(byXpath("//p[text()='Личный Кабинет']"));
+    SelenideElement logo = $(byXpath("//div[@class='AppHeader_header__logo__2D0X2']"));
+    SelenideElement constructorButton = $(byXpath("//p[text()='Конструктор']"));
     private final String headerElementUrl = "/";
     @Step("Открыть главную страницу")
     public HeaderPage open() {
